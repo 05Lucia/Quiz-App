@@ -10,43 +10,80 @@
     <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="init()">
     <nav></nav>
 
     <div class="main-contaniner">
-        <div class="card quiz-card">
-            <div class="card-body">
-                <h5 class="card-title">Fage</h5>
 
-                <div class="card mb-2">
-                    <div class="card-body">
-                        1
-                    </div>
-                </div>
-                <div class="card mb-2">
-                    <div class="card-body">
-                        2
-                    </div>
-                </div>
-                <div class="card mb-2">
-                    <div class="card-body">
-                        3
-                    </div>
-                </div>
-                <div class="card mb-2">
-                    <div class="card-body">
-                        4
-                    </div>
-                </div>
+        <div class="card mb-3 quiz-card" id="endScrean" style="display: none;"> 
 
-                <div class="question-footer">
-                    <span><b>1</b> von <b>5</b> Fragen</span>
-                    <button class="btn btn-secondary">nächte Fragen</button>
+            <div class="row g-0">
+
+                <div class="col-md-4 quizbar">
 
                 </div>
 
+                <div class="col-md-8">
+                    <div class="card-body end-screen">
+                        <img src="./img/brain result.png" alt="">
+                        <h4>COMPLETE <br> HTML QUIZ</h4>
+                        <div class="score">
+                            <h4 class="orange">YOUR SCORE</h4>
+                            <h4 id="score">10/10</h4>
+                        </div>
+                        <button class="btn btn-secondary">SHARE</button>
+                        <a href="index.html">Replay</a>
+                    </div>
+                </div>
             </div>
         </div>
+
+
+        <div class="card mb-3 quiz-card" id="questionBody">
+            <div class="row g-0">
+
+                <div class="col-md-4 quizbar">
+
+                </div>
+
+                <div class="col-md-8 answer">
+                    <div class="card-body">
+
+                        <h5 class="card-title" id="question">Fage</h5>
+
+                        <div class="card mb-2 answer" onclick="answer('answer_1')">
+                            <div class="card-body" id="answer_1">
+                                1
+                            </div>
+                        </div>
+                        <div class="card mb-2  answer" onclick="answer('answer_2')">
+                            <div class="card-body" id="answer_2">
+                                2
+                            </div>
+                        </div>
+                        <div class="card mb-2 answer" onclick="answer('answer_3')">
+                            <div class="card-body" id="answer_3">
+                                3
+                            </div>
+                        </div>
+                        <div class="card mb-2 answer" onclick="answer('answer_4')">
+                            <div class="card-body" id="answer_4">
+                                4
+                            </div>
+                        </div>
+
+                        <div class="question-footer answer">
+                            <span><b id="current-question">1</b> von <b id="all-questions">5</b> Fragen</span>
+                            <button onclick="nextQuestion()" class="btn btn-secondary" id="next-button" disabled>nächte
+                                Fragen</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 
 

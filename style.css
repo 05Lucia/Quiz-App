@@ -1,12 +1,12 @@
-*{
+* {
     margin: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-color: rgb(254,250,239) !important;
+    background-color: rgb(254, 250, 239) !important;
     min-height: 100vh;
-    
+
 }
 
 .main-contaniner {
@@ -14,30 +14,76 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .quiz-card {
-    width: 30rem;
+    max-width: 540px;
+    min-width: 365px;
+    width: 100%;
+    min-height: 375px;
+    max-height: 500px;
+    background-color: rgb(247, 247, 247);
+}
+
+.answer {
+    max-width: 400px;
+    min-width: 230px;
+    width: 100%;
 }
 
 .question-footer {
-    border-top: 1px solid rgb(0,0,0,0.4);
+    border-top: 1px solid rgb(0, 0, 0, 0.4);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 12px;
 }
 
+.end-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+}
 
+.score {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
 
-
-
-
+.end-screen img {
+    width: 5rem;
+    height: 5rem;
+}
 
 .quizbar {
-    background-color: rgb(39,53,92);
+    background-color: rgb(39, 53, 92);
+    width: 100px;
+    min-height: 375px;
+    max-height: 500px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .quizbar p {
-    color: rgb(155,167,192);
+    color: rgb(155, 167, 192);
+}
+
+@media (max-width: 500px) {
+
+    .answer {
+        width: 280px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .answer {
+        width: 230px;
+    }
 }
