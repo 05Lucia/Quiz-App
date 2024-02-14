@@ -18,6 +18,7 @@
     </header>
 
     <div class="main-contaniner">
+        <!-- TODO Welcome Screen!!! -->
 
         <div class="card mb-3 quiz-card" id="startScrean" > <!--style="display: none;" -->
             <div class="row g-0">
@@ -26,23 +27,22 @@
                     <img src="./img/logo.png" alt="Logo">
                     <ul class="nav flex-column ">
                         <li class="nav-item">
-                            <a class="nav-link active"  href="index.html"><h5>HTML</h5></a>
+                            <a id="html" class="nav-link active" href="#" onclick="htmlQuestions()"><h5>HTML</h5></a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link " href="#"><h5>CSS</h5></a>
+                            <a id="css" class="nav-link " href="#" onclick="cssQuestions ()"><h5>CSS</h5></a>
                           </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#"><h5>JS</h5></a>
+                          <li id="js" class="nav-item">
+                            <a class="nav-link" href="#" onclick="jsQuestions ()"><h5>JS</h5></a>
                           </li>
                         </ul>
-                    <!-- TODO: finish menue bar -> AKTIV!! -->
                 </div>
 
                 <div class="col-md-8 card-width">
                     <div class="card-body start-screen" >
                          <h4>Wlcome to <br> the awesome HTML quiz!</h4>
                          <p>Ready for the challenge?</p>
-                         <button class="btn btn-secondary" onclick="init(html)">Start Now ></button>
+                         <button class="btn btn-secondary" onclick="init()">Start Now ></button>
                     </div>
                 </div>
                 
@@ -65,7 +65,6 @@
                             <a class="nav-link" href="#"><h5>JS</h5></a>
                           </li>
                         </ul>
-                    <!-- TODO: finish menue bar -> AKTIV!! -->
                 </div>
 
                 <div class="col-md-8 card-width">
@@ -80,7 +79,7 @@
                         <a href="index.html">Replay</a>
                     </div>
                 </div>
-
+                <!-- Trophy noch eine bauen!!! -->
             </div>
         </div>
 
@@ -101,7 +100,7 @@
                             <a class="nav-link" href="#"><h5>JS</h5></a>
                           </li>
                         </ul>
-                    <!-- TODO: finish menue bar -> AKTIV!! -->
+                    
                 </div>
 
                 <div class="col-md-8 answer">
