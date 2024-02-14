@@ -111,9 +111,18 @@ body {
     text-align: center;
     gap: 16px;
     height: 100%;
+    background-image: url(./img/brainbg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .quizbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
     background-color: rgb(41, 86, 41);
     max-width: 100px;
     width: 100%;
@@ -123,15 +132,48 @@ body {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     left: 0;
+    padding-top: 16px;
 }
 
-.quizbar button {
-    color: rgb(155, 167, 192);
+.quizbar a {
+    color: rgb(143, 167, 143);
+}
+
+.quizbar a:hover {
+    color: rgb(143, 167, 143);
+}
+
+.nav {
+    width: 100%;
+    min-width: 80px;
+    flex-shrink: 1;
+}
+
+.nav-item {
+    width: 100%;
+    min-width: 80px;
+    flex-shrink: 1; 
+}
+
+.nav-link {
+    width: 100%;
+    min-width: 80px;
+    flex-shrink: 1; 
+}
+
+.nav-link:hover {
+    border-left: 4px solid;
+}
+
+.active {
+    color: rgb(234 249 234) !important;
+    border-left: 4px solid rgb(234 249 234);
+    
 }
 
 .quizbar img {
     height: 3rem;
-    width: 3rem;
+    width: auto;
 }
 
 
@@ -175,6 +217,11 @@ body {
 
     .score {
         flex-direction: column;
+    }
+
+    .nav-link h5{
+        font-weight: 500;
+        font-size: 16px;
     }
  
 }
