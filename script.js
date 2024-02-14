@@ -83,6 +83,7 @@ let questions = [
 ];
 
 let currentQuestion = 0;
+let rightQuestion = 0;
 
 function init() {
     document.getElementById('all-questions').innerHTML = questions.length;
@@ -90,12 +91,14 @@ function init() {
 }
 
 function showQuestion() {
+    
     let question = questions[currentQuestion];
     document.getElementById('question').innerHTML = question['question'];
     document.getElementById('answer_1').innerHTML = question['answer_1'];
     document.getElementById('answer_2').innerHTML = question['answer_2'];
     document.getElementById('answer_3').innerHTML = question['answer_3'];
     document.getElementById('answer_4').innerHTML = question['answer_4'];
+    Progress()
 }
 
 function answer(selection) {// selection = ausgewählte antwort.
@@ -106,6 +109,7 @@ function answer(selection) {// selection = ausgewählte antwort.
 
     if (selectedQuestionNumber == question['right_answer']) {
         document.getElementById(selection).parentNode.classList.add('bg-success-subtle');
+        rightQuestion++;
     } else {
         document.getElementById(selection).parentNode.classList.add('bg-danger-subtle');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success-subtle');
@@ -118,10 +122,12 @@ function nextQuestion() {
     if (currentQuestion >= questions.length) {
         document.getElementById('endScrean').style = '';
         document.getElementById('questionBody').style = 'display: none;';
+        score()
         // TODO: Show end screen!
     } else {
 
         showQuestion();
+        
         document.getElementById('next-button').disabled = true;
         document.getElementById('current-question').innerHTML = currentQuestion + 1;
 
@@ -130,4 +136,15 @@ function nextQuestion() {
         document.getElementById('answer_3').parentNode.classList.remove('bg-success-subtle', 'bg-danger-subtle');
         document.getElementById('answer_4').parentNode.classList.remove('bg-success-subtle', 'bg-danger-subtle');
     }
+}
+
+function Progress() {
+    let precent = ((currentQuestion+1)/questions.length)*100;
+    precent = Math.round(precent)
+    document.getElementById('progressbar').innerHTML = `${precent.toFixed(0)}%`;
+    document.getElementById('progressbar').style = `width: ${precent}%;`;
+}
+
+function score() {
+    document.getElementById('score').innerHTML = `${rightQuestion}/${questions.length}`;
 }

@@ -10,24 +10,49 @@
     <script src="script.js"></script>
 </head>
 
-<body onload="init()">
-    <nav></nav>
+<body>
+    <header>
+        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar" style="width: 0%" id="progressbar">0%</div>
+          </div>
+    </header>
 
     <div class="main-contaniner">
 
-        <div class="card mb-3 quiz-card" id="endScrean" style="display: none;"> 
-
+        <div class="card mb-3 quiz-card" id="startScrean" > <!--style="display: none;" -->
             <div class="row g-0">
 
                 <div class="col-md-4 quizbar">
-
+                    <!-- TODO: finish menue bar -->
                 </div>
 
-                <div class="col-md-8">
-                    <div class="card-body end-screen">
-                        <img src="./img/brain result.png" alt="">
+                <div class="col-md-8 card-width">
+                    <div class="card-body start-screen">
+                         <h4>Wlcome to <br> the awesome HTML quiz!</h4>
+                         <p>Ready for the challenge?</p>
+                         <button class="btn btn-secondary" onclick="init()">Start Now ></button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="card mb-3 quiz-card" id="endScrean" style="display: none;"> <!-- Trophe noch eine bauen an der seite!!!-->
+            <div class="row g-0">
+
+                <div class="col-md-4 quizbar">
+                    <img src="" alt="">
+                    <div>
+
+                    </div>
+                    <!-- TODO: finish menue bar -->
+                </div>
+
+                <div class="col-md-8 card-width">
+                    <div class="card-body end-screen ">
+                        <img src="./img/brain result.png"  >
                         <h4>COMPLETE <br> HTML QUIZ</h4>
-                        <div class="score">
+                        <div class="score" >
                             <h4 class="orange">YOUR SCORE</h4>
                             <h4 id="score">10/10</h4>
                         </div>
@@ -35,15 +60,16 @@
                         <a href="index.html">Replay</a>
                     </div>
                 </div>
+
             </div>
         </div>
 
 
-        <div class="card mb-3 quiz-card" id="questionBody">
+        <div class="card mb-3 quiz-card" id="questionBody" style="display: none;">
             <div class="row g-0">
 
                 <div class="col-md-4 quizbar">
-
+                    <!-- TODO: finish menue bar -->
                 </div>
 
                 <div class="col-md-8 answer">
