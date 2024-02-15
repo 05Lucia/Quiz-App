@@ -158,7 +158,7 @@ let cssQuiz = [
 let jsQuiz = [
     {
         "question": "Which keyword is used to declare a variable in JavaScript?",
-        "answers_1": "variable",
+        "answer_1": "variable",
         "answer_2": "let",
         "answer_3": "const",
         "answer_4": "var",
@@ -217,6 +217,9 @@ let jsQuiz = [
 let currentQuestion = 0;
 let rightQuestion = 0;
 let quizQuestions = 0;
+
+let audioSucsess = new Audio('./sound/sucsess.mp3');
+let audioFail = new Audio('./sound/fail.mp3');
 
 
 
@@ -281,11 +284,15 @@ function answer(selection) {// selection = ausgewählte antwort.
     let idOfRightAnswer = `answer_${question['right_answer']}` // damit immer die richtige antwort aus gewählt wird.
 
     if (selectedQuestionNumber == question['right_answer']) {
+        audioSucsess.play();
         document.getElementById(selection).parentNode.classList.add('bg-success-subtle');
         rightQuestion++;
+    
     } else {
+        audioFail.play();
         document.getElementById(selection).parentNode.classList.add('bg-danger-subtle');
         document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success-subtle');
+        
     }
     document.getElementById('next-button').disabled = false;
 }
