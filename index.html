@@ -8,139 +8,58 @@
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"><!-- Bootstrap -->
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <script src="tempalte.js"></script>
 </head>
 
 <body>
     <header>
-        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+            aria-valuemax="100">
             <div class="progress-bar" style="width: 0%" id="progressbar">0%</div>
-          </div>
+        </div>
     </header>
 
-    <div class="main-contaniner">
-        <!-- TODO Welcome Screen!!! -->
+    <div class="main-contaniner" id="main-contaniner">
 
-        <div class="card mb-3 quiz-card" id="startScrean" > <!--style="display: none;" -->
+
+
+        <div class="card mb-3 quiz-card" id="startScrean"> <!-- TODO Welcome Screen!!! -->
             <div class="row g-0">
 
                 <div class="col-md-4 quizbar">
-                    <img src="./img/logo.png" alt="Logo">
+                    <a href="index.html"><img src="./img/logo.png" alt="Logo"></a>
                     <ul class="nav flex-column ">
                         <li class="nav-item">
-                            <a id="html" class="nav-link active" href="#" onclick="htmlQuestions()"><h5>HTML</h5></a>
-                          </li>
-                          <li class="nav-item">
-                            <a id="css" class="nav-link " href="#" onclick="cssQuestions ()"><h5>CSS</h5></a>
-                          </li>
-                          <li id="js" class="nav-item">
-                            <a class="nav-link" href="#" onclick="jsQuestions ()"><h5>JS</h5></a>
-                          </li>
-                        </ul>
-                </div>
-
-                <div class="col-md-8 card-width">
-                    <div class="card-body start-screen" >
-                         <h4>Wlcome to <br> the awesome HTML quiz!</h4>
-                         <p>Ready for the challenge?</p>
-                         <button class="btn btn-secondary" onclick="init()">Start Now ></button>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-
-        <div class="card mb-3 quiz-card" id="endScrean" style="display: none;"> <!-- Trophe noch eine bauen an der seite!!!-->
-            <div class="row g-0">
-
-                <div class="col-md-4 quizbar">
-                    <img src="./img/logo.png" alt="Logo">
-                    <ul class="nav flex-column ">
+                            <a id="html" class="nav-link" href="#" onclick="htmlQuestions()">
+                                <h5>HTML</h5>
+                            </a>
+                        </li>
                         <li class="nav-item">
-                            <a class="nav-link active"  href="index.html"><h5>HTML</h5></a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link " href="#"><h5>CSS</h5></a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#"><h5>JS</h5></a>
-                          </li>
-                        </ul>
-                </div>
-
-                <div class="col-md-8 card-width">
-                    <div class="card-body end-screen ">
-                        <img src="./img/brain result.png"  >
-                        <h4>COMPLETE <br> HTML QUIZ</h4>
-                        <div class="score" >
-                            <h4 class="orange">YOUR SCORE</h4>
-                            <h4 id="score">10/10</h4>
-                        </div>
-                        <button class="btn btn-secondary">SHARE</button>
-                        <a href="index.html">Replay</a>
-                    </div>
-                </div>
-                <!-- Trophy noch eine bauen!!! -->
-            </div>
-        </div>
-
-
-        <div class="card mb-3 quiz-card" id="questionBody" style="display: none;">
-            <div class="row g-0">
-
-                <div class="col-md-4 quizbar">
-                    <img src="./img/logo.png" alt="Logo">
-                    <ul class="nav flex-column ">
+                            <a id="css" class="nav-link " href="#" onclick="cssQuestions ()">
+                                <h5>CSS</h5>
+                            </a>
+                        </li>
                         <li class="nav-item">
-                            <a class="nav-link active"  href="index.html"><h5>HTML</h5></a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link " href="#"><h5>CSS</h5></a>
-                          </li>
-                          <li class="nav-item">
-                            <a class="nav-link" href="#"><h5>JS</h5></a>
-                          </li>
-                        </ul>
-                    
+                            <a id="js" class="nav-link" href="#" onclick="jsQuestions ()">
+                                <h5>JS</h5>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="col-md-8 answer">
-                    <div class="card-body">
-
-                        <h5 class="card-title" id="question">Fage</h5>
-
-                        <div class="card mb-2 answer" onclick="answer('answer_1')">
-                            <div class="card-body" id="answer_1">
-                                1
-                            </div>
-                        </div>
-                        <div class="card mb-2  answer" onclick="answer('answer_2')">
-                            <div class="card-body" id="answer_2">
-                                2
-                            </div>
-                        </div>
-                        <div class="card mb-2 answer" onclick="answer('answer_3')">
-                            <div class="card-body" id="answer_3">
-                                3
-                            </div>
-                        </div>
-                        <div class="card mb-2 answer" onclick="answer('answer_4')">
-                            <div class="card-body" id="answer_4">
-                                4
-                            </div>
-                        </div>
-
-                        <div class="question-footer answer">
-                            <span><b id="current-question">1</b> von <b id="all-questions">5</b> Fragen</span>
-                            <button onclick="nextQuestion()" class="btn btn-secondary" id="next-button" disabled>nächte
-                                Fragen</button>
-
-                        </div>
+                <div class="col-md-8 card-width" id="quiz-screen">
+                    <div class="card-body welcome-screen">
+                        <h4>Wlcome to our quizzes!!</h4>
+                        <p>Test your knowledge and skills in various areas. Choose the correct answers and see how well
+                            you do!</p>
                     </div>
                 </div>
+
             </div>
-
         </div>
-
+        
+        
+        <!-- ---------------------------------------------------------------------------------------------------------------------------------------------- -->
     </div>
 
 
