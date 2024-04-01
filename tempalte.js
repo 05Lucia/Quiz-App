@@ -1,7 +1,7 @@
 function startTemplate(a) {
     return `
     <div class="card-body start-screen" >
-        <h4>Wlcome to <br> the awesome ${a} quiz!</h4>
+        <h4>Welcome to <br> the awesome ${a} quiz!</h4>
         <p>Ready for the challenge?</p>
         <button class="btn btn-warning" onclick="init()">Start Now ></button>
     </div>

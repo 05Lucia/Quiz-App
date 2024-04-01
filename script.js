@@ -80,7 +80,7 @@ function answer(selection) {// selection = ausgewählte antwort.
 }
 
 function rightAnswerSelected(selectedQuestionNumber, question) {
-    selectedQuestionNumber == question['right_answer']
+    return selectedQuestionNumber == question['right_answer']
 }
 
 function nextQuestion() {
